@@ -222,33 +222,6 @@ type Population (tours : Tour list) =
             candidateList <- (List.getAt tourList r) :: candidateList
         candidateList
                 
-    member public this.EpochOld(epochs : int) =
-        // iterate steps
-        let rs : Random = new System.Random()
-        for e = 0 to epochs do
-            // save fittest
-            let mutable toursList = List.genericTolist _tours
-            let fittest : Tour = this.FittestTour toursList
-
-            // do crossover candidateList
-            for tour in toursList do
-                let (tour1, tour2) = this.Crossover fittest tour
-                toursList <- tour2 :: toursList
-                toursList <- tour1 :: toursList
-                toursList <- this.RemoveTwoWorstTours toursList
-
-            // mutate candidateList
-            toursList <- this.Mutate toursList
-
-            // set  tours
-            this.SetTours toursList
-
-            // restore fittest
-            _tours.Add fittest
-
-            // select fittest
-            this.SetCurrentFittestTour() |> ignore
-
     member public this.Epoch(epochs : int) =
         // iterate steps
         let rs : Random = new System.Random()
@@ -268,45 +241,6 @@ type Population (tours : Tour list) =
                 newCandidateList <- tour1 :: newCandidateList
 
             // mutate candidateList
-            newCandidateList <- this.Mutate newCandidateList
-
-            // append new candidateList
-            for i = 0 to (List.length newCandidateList) - 1 do
-                toursList <- (List.getAt newCandidateList i) :: toursList
-            toursList <- this.RemoveBadTours toursList
-
-            // set  tours
-            this.SetTours toursList
-
-            // restore fittest
-            _tours.Add fittest
-
-            // select fittest
-            this.SetCurrentFittestTour() |> ignore
-
-    member public this.EpochOld2 (epochs : int) =
-        // iterate steps
-        let rs : Random = new System.Random()
-        for e = 0 to epochs do
-            // save fittest
-            let mutable toursList = List.genericTolist _tours
-            let fittest : Tour = this.FittestTour toursList
-
-            let mutable newCandidateList : Tour list = []
-
-            // create random candidateList
-            for i = 0 to (List.length toursList) - 1 do
-                let candidateList1 : Tour list = this.SelectCandidates toursList CANDIDATE_MAX rs
-                let candidateList2 : Tour list = this.SelectCandidates toursList CANDIDATE_MAX rs
-                let fittest1 : Tour = this.FittestTour candidateList1
-                let fittest2 : Tour = this.FittestTour candidateList2
-            
-                // do crossover candidateList
-                let (tour1, tour2) = this.Crossover fittest1 fittest2
-                //newCandidateList <- tour1 :: newCandidateList
-                newCandidateList <- tour2 :: newCandidateList
-
-             // mutate candidateList
             newCandidateList <- this.Mutate newCandidateList
 
             // append new candidateList
