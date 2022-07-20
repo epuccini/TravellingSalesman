@@ -1,0 +1,8 @@
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\bin\Debug\App.XML
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\bin\Debug\App.exe
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\bin\Debug\App.pdb
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\bin\Debug\FSharp.Core.dll
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\bin\Debug\FSharp.Core.xml
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\obj\x86\Debug\App.g.resources
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\obj\x86\Debug\App.exe
+E:\Test\FWindowsAppWPFMVVM2\FWindowsAppWPFMVVM2\obj\x86\Debug\App.pdb

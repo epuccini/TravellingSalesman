@@ -1,0 +1,14 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ExpenseIt" Height="1080" Width="1000" Background="#FF515151">
+    <DockPanel>
+        <Canvas x:Name="InfoCanvas" Background="#FF515151" Margin="0,0,0,0" Height="50" VerticalAlignment="Bottom">
+            <Label x:Name="distanceLabelEnd" Content="Distance:" Canvas.Left="619" Canvas.Top="8" Width="297" FontSize="16"/>
+            <Button x:Name="resetButton" Content="Reset" Canvas.Left="382" Canvas.Top="10" Width="97" Height="28"  IsEnabled="{Binding CanClose}" />
+            <Button x:Name="startButton" Content="Start" Canvas.Left="496" Canvas.Top="10" Width="97" Height="28"  IsEnabled="{Binding CanClose}" />
+            <Label x:Name="distanceLabelStart" Content="Distance:" Canvas.Left="35" Canvas.Top="8" Width="297" FontSize="16"/>
+        </Canvas>
+        <Canvas x:Name="DrawingCanvas" Background="#FFD1D1D1" Margin="0,0,0,0" Height="995" VerticalAlignment="Top"/>
+    </DockPanel>
+</Window>
